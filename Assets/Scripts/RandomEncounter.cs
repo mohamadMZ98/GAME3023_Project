@@ -10,10 +10,11 @@ public class RandomEncounter : MonoBehaviour
     [Range(0f, 100000f)]
     [SerializeField]
     public float minEncounterDistance = 2;
-   // public EnemyInfoDisplay enemyInfoDisplay;  // Reference to the EnemyInfoDisplay script
+    public EnemyInfoDisplay enemyInfoDisplay;  // Reference to the EnemyInfoDisplay script
 
 
     public string sceneName = "BattleScene";
+    public SceneTransition sceneTransition;
     // TopDownCharacterController movement;
     // Start is called before the first frame update
     void Start()
@@ -48,8 +49,8 @@ public class RandomEncounter : MonoBehaviour
                         {
                             Debug.Log("ENCOUNTER!!" + encounterZone.areaName);
                             string enemyDetails = "Enemy: Rascal \nHealth: 150\nAttack: 25";  // Example enemy details
-                            //GameManager.instance.SetEnemyDetails(enemyDetails);
-                            SceneManager.LoadScene(sceneName);
+                            GameManager.instance.SetEnemyDetails(enemyDetails);
+                            sceneTransition.LoadNextLevel();
                         }
 
                     }
@@ -62,7 +63,7 @@ public class RandomEncounter : MonoBehaviour
     void StartBattle()
     {
         string enemyDetails = "Enemy: Dragon\nHealth: 150\nAttack: 25";
-        //enemyInfoDisplay.DisplayEnemyInfo(enemyDetails);
+        enemyInfoDisplay.DisplayEnemyInfo(enemyDetails);
         // Additional logic to start the battle, such as setting up the battlefield
     }
 }

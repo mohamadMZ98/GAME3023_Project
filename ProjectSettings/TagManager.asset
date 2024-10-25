@@ -44,14 +44,14 @@ TagManager:
   - name: Ground
     uniqueID: 4802587
     locked: 0
+  - name: Water
+    uniqueID: 3619626881
+    locked: 0
   - name: OnGround
     uniqueID: 4039684467
     locked: 0
   - name: AboveGround
     uniqueID: 91376067
-    locked: 0
-  - name: Water
-    uniqueID: 3619626881
     locked: 0
   - name: Sky
     uniqueID: 348336693
