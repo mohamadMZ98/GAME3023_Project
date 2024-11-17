@@ -5,8 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    private EnemyData currentEnemy;
 
-    public string enemyDetails;  // To store the enemy details
+    // public string enemyDetails;  // To store the enemy details
 
     void Awake()
     {
@@ -24,8 +25,13 @@ public class GameManager : MonoBehaviour
 
 
     // Function to set the enemy details
-    public void SetEnemyDetails(string details)
+    public void SetEnemyData(EnemyData enemy)
     {
-        enemyDetails = details;
+        currentEnemy = enemy;
+    }
+
+    public EnemyData GetCurrentEnemy()
+    {
+        return currentEnemy;
     }
 }

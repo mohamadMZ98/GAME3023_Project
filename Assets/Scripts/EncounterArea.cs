@@ -7,7 +7,7 @@ public class EncounterArea : MonoBehaviour
     [Range(0f, 1f)]
     public float encounterChance = 0.5f;
     public string areaName = "area 1";
-
+    public List<EnemyData> possibleEnemies;
 
     public bool RollEncounter()
     {

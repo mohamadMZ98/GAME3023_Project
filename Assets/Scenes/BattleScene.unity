@@ -152,7 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3bf973e3fb6d8a458594a0e6ccd8550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyInfoDisplay: {fileID: 1569439180}
+  enemyImage: {fileID: 1309311485}
+  enemyInfoText: {fileID: 1569439181}
+  typingSpeed: 0.05
 --- !u!4 &85268975
 Transform:
   m_ObjectHideFlags: 0
