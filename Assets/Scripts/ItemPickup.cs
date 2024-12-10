@@ -11,6 +11,8 @@ public class ItemPickup : MonoBehaviour
 
     public ItemInfoTextDisplay infoTextDisplay;
 
+    public AudioSource pickupSound;
+
     private void Start()
     {
         // Find the Text component in the child named "PickupText"
@@ -46,8 +48,18 @@ public class ItemPickup : MonoBehaviour
 
     public void PickUp()
     {
-        
+
         Debug.Log($"Picked up {itemName}");
+
+        // Play the pickup sound if it's assigned
+        if (pickupSound != null)
+        {
+            pickupSound.Play();
+        }
+        else
+        {
+            Debug.LogWarning("Pickup sound is not assigned.");
+        }
         Destroy(gameObject);  // Remove the item from the scene
 
         // Instantiate item info text at the item's position
@@ -56,7 +68,10 @@ public class ItemPickup : MonoBehaviour
         textComponent.text = $"{itemName} picked up!";
         itemInfoText.SetActive(true);
 
+        
+
         StartCoroutine(HideAfterDelay(itemInfoText, 2.0f));
+ 
 
     }
 
