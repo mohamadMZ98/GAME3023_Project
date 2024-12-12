@@ -18,6 +18,7 @@ public class ItemPickup : MonoBehaviour
         // Find the Text component in the child named "PickupText"
         pickupText = GetComponentInChildren<TMP_Text>(true);  // 'true' to find inactive children
         //infoTextDisplay = FindObjectOfType<ItemInfoTextDisplay>();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -60,7 +61,6 @@ public class ItemPickup : MonoBehaviour
         {
             Debug.LogWarning("Pickup sound is not assigned.");
         }
-        Destroy(gameObject);  // Remove the item from the scene
 
         // Instantiate item info text at the item's position
         GameObject itemInfoText = Instantiate(infoTextDisplay.itemInfoTextPrefab, transform.position, Quaternion.identity);
@@ -69,10 +69,9 @@ public class ItemPickup : MonoBehaviour
         itemInfoText.SetActive(true);
 
         
-
         StartCoroutine(HideAfterDelay(itemInfoText, 2.0f));
- 
 
+        Destroy(gameObject, pickupSound.clip.length);
     }
 
     private IEnumerator HideAfterDelay(GameObject textObject, float delay)
