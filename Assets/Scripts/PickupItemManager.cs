@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
 
 
 public class PickupItemManager : MonoBehaviour
@@ -11,6 +12,7 @@ public class PickupItemManager : MonoBehaviour
     {
         public string itemName;
         public Sprite itemSprite;
+        public AchievementSO achievement;
     }
 
     public PickupItem[] pickupItems;  // Array of items with names and sprites
@@ -18,6 +20,7 @@ public class PickupItemManager : MonoBehaviour
     public TMP_Text pickupTextPrefab;  // Reference to a TMP text prefab for "Press to Pickup"
     public ItemInfoTextDisplay infoTextDisplay;
     public GameObject itemInfoDisplayPrefab;
+
 
     void Start()
     {
@@ -47,6 +50,12 @@ public class PickupItemManager : MonoBehaviour
             itemPickupScript.pickupText = pickupText;
             itemPickupScript.itemName = item.itemName;  // Assign name for potential use
             itemPickupScript.infoTextDisplay = infoTextDisplay;
+
+            if(item.achievement != null)
+            {
+                newItem.GetComponent<AchievementNotifier>().Init(item.achievement);
+            }
+            
         }
     }
 

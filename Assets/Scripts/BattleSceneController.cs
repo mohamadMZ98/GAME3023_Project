@@ -19,7 +19,8 @@ public class BattleSceneController : MonoBehaviour
         if (currentEnemy != null)
         {
             // Display Enemy Image, info
-            enemyImage.sprite = currentEnemy.enemySprite;
+            if(enemyImage!=null)
+                enemyImage.sprite = currentEnemy.enemySprite;
             // enemyNameText.text = currentEnemy.enemyName;
             //enemyStatsText.text = $"Health: {currentEnemy.health}\nAttack: {currentEnemy.attackPower}";
             string fullText = $"Enemy: {currentEnemy.enemyName}\nHealth: {currentEnemy.health}\nAttack: {currentEnemy.attackPower}";
