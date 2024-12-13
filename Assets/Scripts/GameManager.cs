@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     public EnemyData GetCurrentEnemy()
     {
+        Debug.Log("Current enemy: " + currentEnemy?.enemyName);
         return currentEnemy;
     }
 }
