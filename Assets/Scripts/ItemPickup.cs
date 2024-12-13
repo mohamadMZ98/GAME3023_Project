@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class ItemPickup : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class ItemPickup : MonoBehaviour
     public ItemInfoTextDisplay infoTextDisplay;
 
     public AudioSource pickupSound;
+
+    public UnityEvent OnPickUP;
 
     private void Start()
     {
@@ -67,6 +70,9 @@ public class ItemPickup : MonoBehaviour
         TMP_Text textComponent = itemInfoText.GetComponent<TMP_Text>();
         textComponent.text = $"{itemName} picked up!";
         itemInfoText.SetActive(true);
+
+        //////invoke a unity event
+        OnPickUP?.Invoke();
 
         
         StartCoroutine(HideAfterDelay(itemInfoText, 2.0f));
