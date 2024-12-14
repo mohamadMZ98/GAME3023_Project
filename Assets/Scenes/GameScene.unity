@@ -23579,8 +23579,8 @@ MonoBehaviour:
   - {x: 2.3857937, y: 2.0841632, z: 0}
   - {x: 2.4404464, y: -1.0311313, z: 0}
   m_ShapePathHash: -1498180293
-  m_Mesh: {fileID: 1780088164}
-  m_InstanceId: 42264
+  m_Mesh: {fileID: 1731515871}
+  m_InstanceId: 29366
   m_LocalBounds:
     m_Center: {x: -0.27514672, y: 0.52678967, z: 0}
     m_Extent: {x: 2.715593, y: 1.6149836, z: 0}
@@ -27118,7 +27118,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712688943}
   m_CullTransparentMesh: 1
---- !u!43 &1780088164
+--- !u!43 &1731515871
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
